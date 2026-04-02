@@ -94,7 +94,6 @@
       align-items: center; 
       gap: 24px; 
     }
-    /* Renamed to .hdr-btn to prevent conflict with game's .btn */
     .hdr-btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 18px;
       border-radius: 10px; color: #fff; text-decoration: none; font-weight: 800; font-family: inherit; font-size: 1rem;
@@ -329,6 +328,7 @@
       </div>
     </div>
   </div>
+
   <div class="wrap">
     <header>
       <div class="brand">
@@ -723,7 +723,8 @@
     // =========================
     // TOPIC DATA (Shapes)
     // =========================
-    const RAW_BASE = "https://github.com/bubblesinarabic/shapes-bubbles";
+    // FIXED: Using direct raw.githubusercontent.com so images do not break or block
+    const RAW_PREFIX = "https://raw.githubusercontent.com/bubblesinarabic/shapes-bubbles/main/";
 
     const TOPIC = {
       title: "الأشكال",
@@ -797,10 +798,8 @@
     };
 
     // =========================
-    // Asset helpers (RAW_BASE rule)
+    // Asset helpers
     // =========================
-    const RAW_PREFIX = RAW_BASE.replace(/\/+$/,"") + "/raw/main/";
-
     function assetUrl(filename){
       return RAW_PREFIX + encodeURIComponent(filename);
     }
